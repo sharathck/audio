@@ -11,7 +11,7 @@ function App() {
   const playerRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:4500/files')
+    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-1')
       .then(response => response.json())
       .then(data => {
         console.log('Data fetched: ', data);

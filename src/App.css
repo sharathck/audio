@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+.react-player__play-icon, 
+.react-player__pause-icon {
+  fill: white; /* Adjust icon color */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
+}
+
+.react-player__slider {
+  background: rgba(0, 0, 0, 0.3); /* Adjust slider background color */
+  fill: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Adjust shadow properties */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,14 +26,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
+  min-height: 50vh; ;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {

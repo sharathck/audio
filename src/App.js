@@ -70,7 +70,7 @@ function App() {
         </div>
         <ul>
           {files.map((file, index) => (
-            <li key={index}>
+            <li key={index} style={{ color: 'blue', height : '68px',  }}>
               <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url); }}>
                 {file.name}
               </a>

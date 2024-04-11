@@ -72,7 +72,7 @@ function App() {
           {files.map((file, index) => (
             <li key={index} style={{ color: 'blue', height : '55px',  }}>
               <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url); }}>
-                {file.name} ({Math.ceil((file.size)/ (1024*1024))} MB)
+                {file.name} ({Math.ceil((file.size)/ (1024*800))} minutes)
               </a>
             </li>
           ))}

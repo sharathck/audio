@@ -58,7 +58,7 @@ function App() {
           step="0.01"
           value={progress}
           onChange={handleSeek}
-          style={{ position: 'relative', width: '90%', height: '40%' }} // Increase width and height here
+          style={{ position: 'relative', width: '90%', height: '40px' }} // Increase width and height here
         />
         <div className="">
           <ReactPlayer
@@ -83,9 +83,9 @@ function App() {
             <li
               key={index}
               style={{
-                color: 'blue',
                 height: '55px',
-                filter: selectedFileIndex === index ? 'invert(100%)' : 'none',
+                fontWeight: selectedFileIndex === index ? 'bold' : 'normal',
+                textShadow: selectedFileIndex === index ? '1px 1px 2px rgba(0, 0, 0, 0.5)' : 'none',
               }}
             >
               <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>

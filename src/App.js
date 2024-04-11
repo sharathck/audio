@@ -33,6 +33,14 @@ function App() {
 
   const handleProgress = (progress) => {
     setProgress(progress.played);
+
+    // Check if the current file has finished playing
+    if (progress.played === 1 && selectedFileIndex !== null && selectedFileIndex < files.length - 1) {
+      // Play the next file in the list
+      const nextFileIndex = selectedFileIndex + 1;
+      const nextFileUrl = files[nextFileIndex].url;
+      setAudioSource(nextFileUrl, nextFileIndex);
+    }
   };
 
   const handleSeek = (e) => {

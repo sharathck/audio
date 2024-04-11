@@ -68,7 +68,7 @@ function App() {
             <PlayCircleOutlined onClick={handlePlayPause} style={{ fontSize: '54px', color: 'green' }} />
           )}
         </div>
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           {files.map((file, index) => (
             <li key={index} style={{ color: 'blue', height : '55px',  }}>
               <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url); }}>

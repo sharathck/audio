@@ -24,11 +24,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+li {
+  line-height: 200%; /* Adjust as needed */
+  border: 1px solid #000; /* Adjust border color */
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
+  background-color: #f3f3eb; /* Adjust background color */
+  color: #000; /* Adjust text color */
+}
 
 .selected-file {
-  border: 1px solid #000; /* Adjust border color */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
-  background-color: #f0f0f0; /* Adjust background color */
+  border: 3px solid #000; /* Adjust border color */
+  background-color: #f2f8af; /* Adjust background color */
   color: #000; /* Adjust text color */
 }
 

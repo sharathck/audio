@@ -82,14 +82,10 @@ function App() {
           {files.map((file, index) => (
             <li
               key={index}
-              style={{
-                height: '55px',
-                fontWeight: selectedFileIndex === index ? 'bold' : 'normal',
-                textShadow: selectedFileIndex === index ? '1px 1px 2px rgba(0, 0, 0, 0.5)' : 'none',
-              }}
+              className={selectedFileIndex === index ? 'selected-file' : ''}
             >
               <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>
-                {file.name} ({Math.ceil(file.size / (1024 * 800))} minutes)
+                {file.name}
               </a>
             </li>
           ))}

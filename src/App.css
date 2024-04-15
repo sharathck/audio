@@ -25,6 +25,13 @@
   }
 }
 
+.selected-file {
+  border: 1px solid #000; /* Adjust border color */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
+  background-color: #f0f0f0; /* Adjust background color */
+  color: #000; /* Adjust text color */
+}
+
 .App-header {
   background-color: white;
   min-height: 100vh; ;

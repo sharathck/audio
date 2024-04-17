@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="" style={{ width: '80%' }}>
+        <div className="" style={{ width: '90%' }}>
           <H5AudioPlayer
             ref={playerRef}
             src={currentFileUrl}
@@ -44,7 +44,6 @@ function App() {
             }}
           />
 
-        </div>
         <ul style={{ listStyleType: 'none' }}>
           {files.map((file, index) => (
             <li
@@ -57,6 +56,7 @@ function App() {
             </li>
           ))}
         </ul>
+        </div>
       </header>
     </div>
   );

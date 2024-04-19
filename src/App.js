@@ -11,7 +11,8 @@ function App() {
   const playerRef = useRef(null);
 
   useEffect(() => {
-    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-1')
+    //fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-1')
+    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-6')
       .then(response => response.json())
       .then(data => {
         console.log('Data fetched: ', data);
@@ -24,6 +25,28 @@ function App() {
     setCurrentFileUrl(url);
     setIsPlaying(true);
     setSelectedFileIndex(index);
+  };
+
+  const handleCheckboxChange = (e, file) => {
+    e.preventDefault();
+    const requestBody = {
+      filename: file.name
+    };
+    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-6', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('API request failed');
+        }
+        return response.json();
+      })
+      .then(data => { console.log('Checkbox clicked: ', data); })
+      .catch(error => console.error('Error calling API: ', error));
   };
 
   return (
@@ -44,18 +67,20 @@ function App() {
             }}
           />
 
-        <ul style={{ listStyleType: 'none' }}>
-          {files.map((file, index) => (
-            <li
-              key={index}
-              className={selectedFileIndex === index ? 'selected-file' : ''}
-            >
-              <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>
-                {file.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul style={{ listStyleType: 'none' }}>
+            {files.map((file, index) => (
+              <li
+                key={index}
+                className={selectedFileIndex === index ? 'selected-file' : ''}
+              >
+                <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>
+                  {file.name}
+                </a>
+                <input type="checkbox" onChange={(e) => handleCheckboxChange(e, file)} style={{ width: '20px', height: '20px', backgroundColor: '#fff', border: '2px solid #000', borderRadius: '5px', marginLeft: '20px' }} />
+                <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </header>
     </div>

@@ -15,7 +15,7 @@
 li {
   line-height: 200%; /* Adjust as needed */
   border: 1px solid #000; /* Adjust border color */
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow properties */
   background-color: #f3f3eb; /* Adjust background color */
   color: #000; /* Adjust text color */
 }
@@ -48,4 +48,16 @@ li {
   to {
     transform: rotate(360deg);
   }
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #000;
 }

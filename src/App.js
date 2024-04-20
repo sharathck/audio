@@ -52,11 +52,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="" style={{ width: '90%' }}>
+        <div className="" style={{ width: '99%' }}>
           <H5AudioPlayer
             ref={playerRef}
             src={currentFileUrl}
             autoPlay={isPlaying}
+            showJumpControls={true}
+            showDownloadProgress={true}
+            showFilledProgress={true}
+            showFilledVolume={true}
+            progressJumpSteps={{ forward: 45000, backward: 20000 }}
             controls={true}
             onError={(error) => console.error('Error loading or playing audio:', error)}
             onPlay={() => setIsPlaying(true)}
@@ -73,7 +78,7 @@ function App() {
                 key={index}
                 className={selectedFileIndex === index ? 'selected-file' : ''}
               >
-                <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>
+                <a href={file.url} download onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>
                   {file.name}
                 </a>
                 <input type="checkbox" onChange={(e) => handleCheckboxChange(e, file)} style={{ width: '20px', height: '20px', backgroundColor: '#fff', border: '2px solid #000', borderRadius: '5px', marginLeft: '20px' }} />

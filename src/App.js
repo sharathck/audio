@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     //fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-1')
-    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-6')
+    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-10')
       .then(response => response.json())
       .then(data => {
         console.log('Data fetched: ', data);
@@ -29,24 +29,21 @@ function App() {
 
   const handleCheckboxChange = (e, file) => {
     e.preventDefault();
-    const requestBody = {
-      filename: file.name
-    };
-    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-6', {
+    fetch('https://us-central1-reviewtext-ad5c6.cloudfunctions.net/function-10', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(requestBody)
+      body: JSON.stringify({filename: file.name})
     })
       .then(response => {
         if (!response.ok) {
           throw new Error('API request failed');
         }
-        return response.json();
+        return response.text();
       })
       .then(data => { console.log('Checkbox clicked: ', data); })
-      .catch(error => console.error('Error calling API: ', error));
+      .catch(error => console.error('file.name' + file.name + ' Error calling API: ', error));
   };
 
   return (

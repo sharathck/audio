@@ -81,7 +81,6 @@ function App() {
                   {file.name}
                 </a>
                 <input type="checkbox" onChange={(e) => handleCheckboxChange(e, file)} style={{ width: '20px', height: '20px', backgroundColor: '#fff', border: '2px solid #000', borderRadius: '5px', marginLeft: '20px' }} />
-                <a href={file.url} download><FontAwesomeIcon icon={faDownload} /> </a>
               </li>
             ))}
           </ul>

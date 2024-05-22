@@ -2,6 +2,8 @@ import './App.css';
 import React, { useEffect, useState, useRef } from 'react';
 import H5AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -79,7 +81,7 @@ function App() {
                   {file.name}
                 </a>
                 <input type="checkbox" onChange={(e) => handleCheckboxChange(e, file)} style={{ width: '20px', height: '20px', backgroundColor: '#fff', border: '2px solid #000', borderRadius: '5px', marginLeft: '20px' }} />
-                <a href={file.url} onClick={(e) => { e.preventDefault(); setAudioSource(file.url, index); }}>                </a>
+                <a href={file.url} download><FontAwesomeIcon icon={faDownload} /> </a>
               </li>
             ))}
           </ul>

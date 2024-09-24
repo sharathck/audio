@@ -18,7 +18,9 @@
     "react-h5-audio-player": "^3.9.1",
     "react-player": "^2.16.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "firebase": "^10.13.1",
+    "react-icons": "*"
   },
   "scripts": {
     "start": "react-scripts start",

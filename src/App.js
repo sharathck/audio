@@ -202,7 +202,7 @@ function App() {
             {genaiData.map((item, index) => (
               <li key={index} className={selectedFileIndex === index ? 'selected-file' : ''}>
                 <a href={item.answer} download onClick={(e) => { e.preventDefault(); setAudioSource(item.answer, index); }}>
-                  {item.answer.replace('https://storage.googleapis.com/audio-genai/', '').replace(new RegExp(`_${user.uid}.*$`), '')} {/* Fall back to a generic name if none is provided */}
+                  {item.answer.replace('https://storage.googleapis.com/audio-genai/', '').replace(new RegExp(`_${user.uid}_[^_]*_`), '_').replace('.mp3','')} {/* Fall back to a generic name if none is provided */}
                 </a>
               </li>
             ))}

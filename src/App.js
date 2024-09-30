@@ -61,7 +61,7 @@ function App() {
   const fetchData = async (userID) => {
     try {
       const genaiCollection = collection(db, 'genai', userID, 'MyGenAI');
-      let q = query(genaiCollection, where('model', '==', 'azure-tts'), orderBy('createdDateTime', 'desc'), limit(15));
+      let q = query(genaiCollection, where('model', '==', 'azure-tts'), orderBy('createdDateTime', 'desc'), limit(100));
       const genaiSnapshot = await getDocs(q);
       const genaiList = genaiSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       
